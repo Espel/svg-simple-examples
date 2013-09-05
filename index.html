@@ -10,27 +10,75 @@
             body { background: #ccc; }
             img,
             #inlineSVG { margin: 10px; border: 1px solid black; width: 100px; height: 100px; }
+
+            .imgbox { float: left; width: 122px; height: 200px; margin: 10px; padding: 10px; background-color: white; }
+            .imgbox label { display: block; }
+
+            hr { clear: both; }
+
         </style>
     </head>
     <body>
-        <h1>SVGs</h1>
-        <img src="svg1.svg" />
-        <img src="svg2.svg" />
-        <img src="svg3.svg" />
-        <img src="svg4.svg" />
-        <img src="svg5.svg" />
-        <img src="svg6.svg" />
-        <img src="svg7.svg" />
-        <img src="svg8.svg" />
-        <img src="svg9.svg" />
+        <h1>SVG-Beispiele</h1>
+
+        <h2>SVG-Dateien</h2>
+
+        <div class="imgbox">
+            <img src="svg1.svg" />
+            <label>1: 100x100 SVG-Img mit &lt;rect&gt;</label>
+        </div>
+
+        <div class="imgbox">
+            <img src="svg2.svg" />
+            <label>2: 200x200 SVG-Img gleichen Inhalts</label>
+        </div>
+
+        <div class="imgbox">
+            <img src="svg3.svg" />
+            <label>3: Path hinzugefügt mit drei Punkten</label>
+        </div>
+
+        <div class="imgbox">
+            <img src="svg4.svg" />
+            <label>4: Eine Linie ist mit Q (quadratic curve) gekrümmt</label>
+        </div>
+
+        <div class="imgbox">
+            <img src="svg5.svg" />
+            <label>5: Beide Elemente gruppiert, und die Gruppe skaliert</label>
+        </div>
+
+        <div class="imgbox">
+            <img src="svg6.svg" />
+            <label>6: ... und translated</label>
+        </div>
+
+        <div class="imgbox">
+            <img src="svg7.svg" />
+            <label>7: Eine Definition mit einem Gradient</label>
+        </div>
+
+        <div class="imgbox">
+            <img src="svg8.svg" />
+            <label>8: Eine Definition mit einem "Shadow"-Filter</label>
+        </div>
+
+        <div class="imgbox">
+            <img src="svg9.svg" />
+            <label>9: Ein aufwändigerer Path (traced mit Inkcacpe)</label>
+        </div>
 
         <hr />
 
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100" height="100" id="inlineSVG">
-            <rect width="60" height="40" x="10" y="10" fill="#4effff" stroke="#f34485" stroke-width="2" />
-            <path d="M 20,20 L 100,50 Q 50,100 0,80 Z" />
-        </svg>
-        <button id="button">Button</button>
+        <h2>Inline-SVG</h2>
+
+        <div class="imgbox">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100" height="100" id="inlineSVG">
+                <rect width="60" height="40" x="10" y="10" fill="#4effff" stroke="#f34485" stroke-width="2" />
+                <path d="M 20,20 L 100,50 Q 50,100 0,80 Z" />
+            </svg>
+            <button id="button">Button</button>
+        </div>
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
         <script>
@@ -38,5 +86,6 @@
                 $('#inlineSVG').find('rect').css({ 'fill': 'red', 'stroke': 'green', 'stroke-width': 10 }).siblings('path').css({ 'fill-opacity': 0.6 });
             });
         </script>
+
     </body>
 </html>
